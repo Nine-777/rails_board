@@ -5,7 +5,7 @@ class BoardsController < ApplicationController
   end
 
   def new
-    @board = Board.new(flas)
+    @board = Board.new(flash[:board])
   end
 
   def create
@@ -22,6 +22,8 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @comment = @board.comments.new
+
   end
 
   def edit
